@@ -14,9 +14,8 @@ package idv.jiaming.scala.lessonOne
  * <b>Tuple</b>
  * <ol>
  * <li>Creating Tuple</li>
+ * <li>Functions return Tuples</li>
  * <li>Printing elements in Tuple</li>
- * <li>Comparing Tuples</li>
- * <li>Concatenating Tuples</li>
  * </ol>
  */
 object ListAndTuple extends App {
@@ -47,6 +46,26 @@ object ListAndTuple extends App {
   val listDel = listAdding.filter(x => x != 3)
   prettyPrint(listDel) //9, 7, 2, 4, 1, 2
 
+  // Creating Tuples    
+  val tupleCreating2 = (1,"robin")
+  val tupleCreating3 = (2,"Jiaming", true)
+  println(tupleCreating3) // (2,Jiaming,true)
+  
+  val (id, name) = (1,"robin")
+  println(id) // 1
+  println(name) // robin
+  
+  // Functions return Tuples
+  def info(data:String)={
+    // do something...
+    val id = 2
+    val name = "Jiaming"
+    (id, name)
+  }
+  val (id2, name2) = info("some information.")
+  println(id2) // 2
+  println(name2) // Jiaming
+  
   def prettyPrint(list: List[Any]) {
     var strArray = ""
     list.foreach { x => if (strArray == "") strArray = x.toString() else strArray += ", " + x }
